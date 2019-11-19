@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppVuelos.Ordenador">
+  <ContentView.Content>
+        <AbsoluteLayout>
+            <StackLayout  AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,0">
+                <Label  Text="  Ordenador de vuelos" TextColor="Black" FontSize="35" />
+                <Label Text="Pegue los vuelos en el recuadro" FontSize="25"/>
+            </StackLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.25,.90,.25" >
+
+                <Editor x:Name="Pantalla" Text="  2  AR1472  31OCT 4 EZETUC HK1  0815 1020  31OCT  E  AR/" AutoSize="Disabled" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,1,1,1.1" 
+                        Keyboard="Default" BackgroundColor="LightBlue" />
+
+            </AbsoluteLayout>
+
+            <BoxView BackgroundColor="LightBlue"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.87,.90,.35"/>
+            <Button Text="OREDENAR" BackgroundColor="Gray" TextColor="Black" FontSize="20"
+                    AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".9,.5,.40,.08"
+                    Clicked="Button_Clicked"/>
+            <Button Text="LIMPIAR" BackgroundColor="Gray" TextColor="Black" FontSize="20" Clicked="Button_Clicked_1"
+                    AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".1,.5,.40,.08"/>
+
+            <Editor x:Name="PantallaDos" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,1.62,.90,.65"
+                    BackgroundColor="LightBlue"  FontSize="15"/>
+        </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>
