@@ -9,18 +9,22 @@
   <ContentView.Content>
         <AbsoluteLayout>
             <Label Text="Aereos Amadeus" AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds="1,.07,.8,.5" FontSize="30" FontAttributes="Bold"/>
+                       AbsoluteLayout.LayoutBounds="1,.07,.8,.5" FontSize="30" FontAttributes="Bold"
+                   TextColor="Black"/>
             <Entry BackgroundColor="LightGray" AbsoluteLayout.LayoutFlags="All"
                        AbsoluteLayout.LayoutBounds=".5,.2,.8,.5" />
-            <Button  AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds=".5,.7,.8,.1" Text="Borrar"
+            <Button  AbsoluteLayout.LayoutFlags="All" CornerRadius="30"
+                       AbsoluteLayout.LayoutBounds=".15,.7,.4,.1" Text="Borrar"
                      FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
-            <Button AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds=".5,.85,.8,.1" Text="Ordenar"
+            <Button  AbsoluteLayout.LayoutFlags="All"
+                       AbsoluteLayout.LayoutBounds=".85,.7,.4,.1" Text="copiar" CornerRadius="30"
+                     FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
+            <Button AbsoluteLayout.LayoutFlags="All" CornerRadius="30"
+                       AbsoluteLayout.LayoutBounds=".5,.83,.8,.1" Text="Ordenar"
                     FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
             <Label Text="*Error" TextColor="Red" 
                    AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds=".8,.98,.8,.1" FontSize="20" />
+                       AbsoluteLayout.LayoutBounds=".8,.95,.8,.1" FontSize="20" />
         </AbsoluteLayout>
   </ContentView.Content>
 </ContentView>
