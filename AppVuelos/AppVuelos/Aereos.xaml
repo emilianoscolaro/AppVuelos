@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppVuelos.Aereos">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Image Source="fotoaereos"
+                   AbsoluteLayout.LayoutFlags="SizeProportional" AbsoluteLayout.LayoutBounds="0,0,1,.3"/>
+            <Label Text="Aereos" FontSize="35" TextColor="White" FontAttributes="Bold"
+                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".9,.3,.3,.25"/>
+            <Label Text=" 3  LA8010 L 16DEC 1 EZELIM HK2  0355 0650  16DEC  E  LA/IQHJBP
+  4  LA2216 S 17DEC 2 LIMTYL HK2  1223 1410  17DEC  E  LA/IQHJBP
+  5  LA2079 B 18DEC 3*TYLLIM HK2  1928 2100  18DEC  E  LA/IQHJBP
+  6  LA2467 S 19DEC 4*LIMEZE HK2  0010 0635  19DEC"
+                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.47,.8,.2" />
+            <Label Text="con valija en bodega"
+                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.6,.9,.03"  />
+            <Label Text="con valija en bodega"
+                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.65,.9,.03"  />
+            <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.9,.8,.05"  >
+                <Label Text="con valija en bodega" VerticalOptions="Center"  />
+                <BoxView BackgroundColor="Black" WidthRequest=".1" HorizontalOptions="EndAndExpand"/>
+                <Label Text="USD" VerticalOptions="Center" FontAttributes="Bold" FontSize="17"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+        </AbsoluteLayout>
+        
+
+
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>
