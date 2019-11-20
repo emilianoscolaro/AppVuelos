@@ -5,14 +5,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppVuelos.MainPage"
-             >
+             BackgroundImageSource="bkdos" >
 
     <ContentPage.Content>
         <AbsoluteLayout>
-            <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.3,.7,.2"
-                    Text="SOLO VUELOS" FontSize="25"/>
-            <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.7,.7,.2"
-                    Text="PAQUETES" FontSize="25"/>
+            <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.2,.7,.2"
+                    Text="SOLO VUELOS" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
+            <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.8,.7,.2"
+                    Text="PAQUETES" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
