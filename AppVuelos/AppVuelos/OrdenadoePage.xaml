@@ -5,25 +5,26 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppVuelos.OrdenadoePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelstyle" TargetType="Label">
+                <Setter Property="FontSize"  Value="22"/>
+                <Setter Property="TextColor" Value="Black"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <Label Text="Aereos Amadeus" AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds="1,.07,.8,.5" FontSize="30" FontAttributes="Bold"
-                   TextColor="Black"/>
-            <Entry BackgroundColor="LightGray" AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds=".5,.2,.8,.5" />
-            <Button  AbsoluteLayout.LayoutFlags="All" CornerRadius="30"
-                       AbsoluteLayout.LayoutBounds=".15,.7,.4,.1" Text="Borrar"
-                     FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
-            <Button  AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds=".85,.7,.4,.1" Text="copiar" CornerRadius="30"
-                     FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
-            <Button AbsoluteLayout.LayoutFlags="All" CornerRadius="30"
-                       AbsoluteLayout.LayoutBounds=".5,.83,.8,.1" Text="Ordenar"
-                    FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue" Clicked="Button_Clicked"/>
-            <Label Text="*Error" TextColor="Red" 
-                   AbsoluteLayout.LayoutFlags="All"
-                       AbsoluteLayout.LayoutBounds=".8,.95,.8,.1" FontSize="20" />
-        </AbsoluteLayout>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" Padding="40" Spacing="30"> 
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="PNR" Style="{StaticResource labelstyle}"/>
+                    <Editor BackgroundColor="LightGray" WidthRequest="150" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox/>
+                    <Label Text="Con valija" Style="{StaticResource labelstyle}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
