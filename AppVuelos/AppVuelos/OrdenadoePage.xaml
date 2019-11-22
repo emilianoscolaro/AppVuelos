@@ -1,12 +1,11 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppVuelos.Ordenador"
-             BackgroundColor="White">
-  <ContentView.Content>
+             x:Class="AppVuelos.OrdenadoePage">
+    <ContentPage.Content>
         <AbsoluteLayout>
             <Label Text="Aereos Amadeus" AbsoluteLayout.LayoutFlags="All"
                        AbsoluteLayout.LayoutBounds="1,.07,.8,.5" FontSize="30" FontAttributes="Bold"
@@ -21,10 +20,10 @@
                      FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
             <Button AbsoluteLayout.LayoutFlags="All" CornerRadius="30"
                        AbsoluteLayout.LayoutBounds=".5,.83,.8,.1" Text="Ordenar"
-                    FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue"/>
+                    FontSize="20" FontAttributes="Bold" BackgroundColor="LightSkyBlue" Clicked="Button_Clicked"/>
             <Label Text="*Error" TextColor="Red" 
                    AbsoluteLayout.LayoutFlags="All"
                        AbsoluteLayout.LayoutBounds=".8,.95,.8,.1" FontSize="20" />
         </AbsoluteLayout>
-  </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

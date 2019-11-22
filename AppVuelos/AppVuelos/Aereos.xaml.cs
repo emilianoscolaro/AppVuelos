@@ -15,6 +15,8 @@ namespace AppVuelos
         public Aereos()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            //((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Transparent;
         }
     }
 }

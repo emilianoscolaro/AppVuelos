@@ -17,6 +17,8 @@ public partial class MainPage : ContentPage
         public MainPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            
         }
 
         string pantallauno;
@@ -47,6 +49,7 @@ public partial class MainPage : ContentPage
                 car[151] + car[152] + car[153] + car[154] + "   " + car[161] + car[162] + car[163] + car[164] + car[165] + car[166] + car[167] + car[168] +
                 car[169] + "\n";
 
+            
 
      //       PantallaDos.Text = st;
 
@@ -58,6 +61,12 @@ public partial class MainPage : ContentPage
    //         PantallaDos.Text = "";
             st = "VUELO    FECHA   AEROP.    HORARIO \n";
         }
-     }
+
+        private async void Button_Clicked_2(object sender, EventArgs e)
+        {
+            OrdenadoePage nuevapagina = new OrdenadoePage();
+            await Navigation.PushAsync(nuevapagina);
+        }
+    }
     
 }

@@ -24,7 +24,7 @@
     <EmbeddedResource Update="Aereos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Ordenador.xaml">
+    <EmbeddedResource Update="OrdenadoePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

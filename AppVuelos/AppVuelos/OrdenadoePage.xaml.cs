@@ -10,11 +10,18 @@ using Xamarin.Forms.Xaml;
 namespace AppVuelos
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Ordenador : ContentView
+    public partial class OrdenadoePage : ContentPage
     {
-        public Ordenador()
+        public OrdenadoePage()
         {
             InitializeComponent();
+            
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            Aereos nuevapagina = new Aereos();
+            await Navigation.PushAsync(nuevapagina);
         }
     }
 }
