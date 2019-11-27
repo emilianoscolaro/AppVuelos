@@ -17,6 +17,9 @@ namespace AppVuelos
         {
             InitializeComponent();
             BindingContext = new PaquetePreviaMVVM();
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).Title = "Solo Aereos";
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
     }
 }

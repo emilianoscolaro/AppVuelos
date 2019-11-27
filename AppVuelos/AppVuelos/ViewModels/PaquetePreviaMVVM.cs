@@ -19,7 +19,7 @@ namespace AppVuelos.ViewModels
 
         public PaquetePreviaMVVM()
         {
-            DestinosList = datastorge.GetDestinos();
+            
 
         }
 
@@ -47,8 +47,7 @@ namespace AppVuelos.ViewModels
         DataStorge datastorge = new DataStorge();
 
         public List<Destino> DestinosList { get; set; }
-        public List<Hotel> HotelesList { get; set; }
-        public List<Ciudad> CiudadList { get; set; }
+
 
 
 

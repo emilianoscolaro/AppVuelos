@@ -15,7 +15,9 @@ namespace AppVuelos
         public OrdenadoePage()
         {
             InitializeComponent();
-            
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
+            ((NavigationPage)Application.Current.MainPage).Title = "Paquete";
+            ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
 
         private async void Button_Clicked(object sender, EventArgs e)

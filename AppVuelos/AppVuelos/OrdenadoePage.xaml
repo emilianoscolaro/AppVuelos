@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppVuelos.OrdenadoePage">
+             x:Class="AppVuelos.OrdenadoePage"
+             Title="Solo Aereos">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelstyle" TargetType="Label">
@@ -44,7 +45,7 @@
                 </StackLayout>
                 <StackLayout Padding="30">
                     <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="White"
-                        FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1"  />
+                        FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1" Clicked="Button_Clicked" />
                 </StackLayout>
 
             </StackLayout>

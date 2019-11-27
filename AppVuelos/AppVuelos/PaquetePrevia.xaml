@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppVuelos.PaquetePrevia">
+             x:Class="AppVuelos.PaquetePrevia"
+             Title="Paquete" >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelstyle" TargetType="Label">
@@ -22,9 +23,8 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" Padding="40" Spacing="20">
-                
-                
                 <StackLayout>
+
                     <Label Text="Destino" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
