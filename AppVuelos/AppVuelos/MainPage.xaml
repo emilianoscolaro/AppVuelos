@@ -13,7 +13,7 @@
                     Text="SOLO VUELOS" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"
                     Clicked="Button_Clicked_2"/>
             <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.8,.7,.2"
-                    Text="PAQUETES" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"/>
+                    Text="PAQUETES" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked_3"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

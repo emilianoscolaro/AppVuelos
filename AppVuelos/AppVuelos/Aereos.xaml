@@ -7,7 +7,7 @@
              x:Class="AppVuelos.Aereos">
     <ContentPage.Content>
         <AbsoluteLayout Padding="0">
-            <Image Source="fotoaereos"  
+            <Image Source=""  
                    AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,.6,1,4.6"/>
             <Label Text="Aereos" FontSize="35" TextColor="White" FontAttributes="Bold"
                    AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".9,.3,.35,.25"/>

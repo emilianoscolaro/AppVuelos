@@ -67,6 +67,12 @@ public partial class MainPage : ContentPage
             OrdenadoePage nuevapagina = new OrdenadoePage();
             await Navigation.PushAsync(nuevapagina);
         }
+
+        private async void Button_Clicked_3(object sender, EventArgs e)
+        {
+            PaquetePrevia nuevapagina = new PaquetePrevia();
+            await Navigation.PushAsync(nuevapagina);
+        }
     }
     
 }

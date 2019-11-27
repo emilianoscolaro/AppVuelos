@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppVuelos.OrdenadoePage">
+             x:Class="AppVuelos.PaquetePrevia">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelstyle" TargetType="Label">
@@ -22,6 +22,40 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Orientation="Vertical" Padding="40" Spacing="20">
+                
+                
+                <StackLayout>
+                    <Label Text="Destino" Style="{StaticResource Titulo}"/>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <Picker Title="--Seleccione destino--" ItemsSource="{Binding DestinosList}" x:Name="PickDest"
+                        ItemDisplayBinding="{Binding Name}" SelectedItem=""/>
+
+
+                <StackLayout >
+                    <Label Text="Ciudad" Style="{StaticResource Titulo}"/>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <Picker Title="--Seleccione ciudad--" ItemsSource="{Binding CiudadList}"
+                        ItemDisplayBinding="{Binding Name}" />
+                
+                
+                <StackLayout >
+                    <Label Text="Hotel" Style="{StaticResource Titulo}"/>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}"
+                        ItemDisplayBinding="{Binding Name}"/>
+                
+                
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox/>
+                    <Label Text="Trasnsfer IN/OUT" Style="{StaticResource labelstyle}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox/>
+                    <Label Text="Asistencia al viajero" Style="{StaticResource labelstyle}"/>
+                </StackLayout>
                 <StackLayout>
                     <Label Text="Aereos" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
