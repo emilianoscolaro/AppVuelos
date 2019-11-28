@@ -62,7 +62,7 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="PNR" VerticalOptions="Center" FontSize="17" FontAttributes="Bold" TextColor="Black"/>
-                    <Entry BackgroundColor="LightGray" WidthRequest="150" />
+                    <Entry  WidthRequest="150" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <CheckBox/>
@@ -76,8 +76,32 @@
                     <CheckBox/>
                     <Label Text="Traslado casa/aeropuerto" Style="{StaticResource labelstyle}"/>
                 </StackLayout>
+                <StackLayout>
+                    <Label Text="Precio" Style="{StaticResource Titulo}"/>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <Picker Title="--Seleccione leyenda--" >
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Precio por PAX</x:String>
+                            <x:String>Precio por paquete</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                <StackLayout Orientation="Horizontal" >
+                    <Picker Title="-Moneda-" WidthRequest="90">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>U$D</x:String>
+                                <x:String>AR$</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Text="$" Style="{StaticResource Titulo}"/>
+                    <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="25" FontAttributes="Bold"/>
+                </StackLayout>
                 <StackLayout Padding="30">
-                    <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="White"
+                    <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="#3f77d1" TextColor="White"
                         FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1"  />
                 </StackLayout>
 
