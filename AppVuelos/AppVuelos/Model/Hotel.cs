@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace AppVuelos.Model
 {
-    public class Destino
+    public class Hotel
     {
         public string Name { get; set; }
         public Image Foto { get; set; }

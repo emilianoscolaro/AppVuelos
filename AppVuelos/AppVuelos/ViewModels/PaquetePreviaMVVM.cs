@@ -12,43 +12,110 @@ namespace AppVuelos.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged([CallerMemberName]string name = null)
+        private void OnPropertyChanged([CallerMemberName] string NombrePropiedad = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(NombrePropiedad));
+            }
+
         }
 
         public PaquetePreviaMVVM()
         {
-            
+            DestinosList = datastorge.GetDestinos();
+            OnPropertyChanged();
 
         }
 
-        private Destino _selectedDestino;
+        
+        private Destino selectdestino;
 
-        public Destino _SelectedDestino
+        public Destino SelectDestino
         {
-            get { return _selectedDestino; }
-            set
-            {
-                if (_selectedDestino != value)
+            get { return selectdestino;}
+            set { selectdestino = value; 
+                if (value == null)
                 {
-                    _selectedDestino = value;
+                    VisCiudad = false;
                 }
+                else
+                {
+                    VisCiudad = true;
+                    
+                }
+                CiudadesList= datastorge.Ciudadidentify(selectdestino.Name, CiudadesList);
+                OnPropertyChanged();
+            }
+        }
+
+        private Ciudad selectciudad;
+
+        public Ciudad SelectCiudad
+        {
+            get { return selectciudad; }
+            set{ selectciudad = value;
+                if (value == null)
+                {
+                    VisHotel = false;
+                }
+                else
+                {
+                    VisHotel = true;
+
+                }
+                HotelesList = datastorge.Hoteldidentify(selectciudad.Name, HotelesList);
+                OnPropertyChanged();
             }
         }
 
 
+        private bool visciudad;
 
-        public bool VisiblePicker;
+        public bool VisCiudad
+        {
+            get { return visciudad; }
+            set { visciudad = value; OnPropertyChanged(); }
+        }
+
+        private bool vishotel;
+
+        public bool VisHotel
+        {
+            get { return vishotel; }
+            set { vishotel = value;OnPropertyChanged(); }
+        }
 
 
 
 
         DataStorge datastorge = new DataStorge();
 
-        public List<Destino> DestinosList { get; set; }
+        private List<Destino> destinoslist;
 
+        public List<Destino> DestinosList
+        {
+            get { return destinoslist; }
+            set { destinoslist = value;OnPropertyChanged(); }
+        }
 
+        private List<Ciudad> ciudadeslist;
+
+        public List<Ciudad> CiudadesList
+        {
+            get { return ciudadeslist; }
+            set { ciudadeslist = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private List<Hotel> hoteleslist;
+
+        public List<Hotel> HotelesList
+        {
+            get { return hoteleslist; }
+            set { hoteleslist = value;OnPropertyChanged(); }
+        }
 
 
 

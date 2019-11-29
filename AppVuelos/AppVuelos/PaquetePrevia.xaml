@@ -28,24 +28,24 @@
                     <Label Text="Destino" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
-                <Picker Title="--Seleccione destino--" ItemsSource="{Binding DestinosList}" x:Name="PickDest"
-                        ItemDisplayBinding="{Binding Name}" SelectedItem=""/>
+                <Picker Title="--Seleccione destino--" ItemsSource="{Binding DestinosList}"
+                        ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectDestino}"/>
 
 
-                <StackLayout >
+                <StackLayout IsVisible="{Binding VisCiudad}" >
                     <Label Text="Ciudad" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
-                <Picker Title="--Seleccione ciudad--" ItemsSource="{Binding CiudadList}"
-                        ItemDisplayBinding="{Binding Name}" />
-                
-                
-                <StackLayout >
+                <Picker Title="--Seleccione ciudad--" ItemsSource="{Binding CiudadesList}"
+                        ItemDisplayBinding="{Binding Name}" IsVisible="{Binding VisCiudad}" SelectedItem="{Binding SelectCiudad}"/>
+
+
+                <StackLayout IsVisible="{Binding VisHotel}">
                     <Label Text="Hotel" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
                 <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}"
-                        ItemDisplayBinding="{Binding Name}"/>
+                        ItemDisplayBinding="{Binding Name}" IsVisible="{Binding VisHotel}"/>
                 
                 
                 <StackLayout Orientation="Horizontal">
