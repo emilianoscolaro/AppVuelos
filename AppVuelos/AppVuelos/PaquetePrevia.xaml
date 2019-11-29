@@ -28,7 +28,7 @@
                     <Label Text="Destino" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
-                <Picker Title="--Seleccione destino--" ItemsSource="{Binding DestinosList}"
+                <Picker Title="--Seleccione destino--" ItemsSource="{Binding DestinosList}" x:Name="PDestino"
                         ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectDestino}"/>
 
 
@@ -44,7 +44,7 @@
                     <Label Text="Hotel" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
-                <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}"
+                <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}" x:Name="PHotel"
                         ItemDisplayBinding="{Binding Name}" IsVisible="{Binding VisHotel}"/>
                 
                 
@@ -102,7 +102,7 @@
                 </StackLayout>
                 <StackLayout Padding="30">
                     <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="#3f77d1" TextColor="White"
-                        FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1"  />
+                        FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1" Clicked="Button_Clicked"  />
                 </StackLayout>
 
             </StackLayout>

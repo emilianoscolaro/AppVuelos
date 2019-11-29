@@ -34,7 +34,7 @@ namespace AppVuelos.ViewModels
         public Destino SelectDestino
         {
             get { return selectdestino;}
-            set { selectdestino = value; 
+            set { selectdestino = value; VisHotel = false;
                 if (value == null)
                 {
                     VisCiudad = false;

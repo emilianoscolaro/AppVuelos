@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppVuelos.ViewModels;
+using AppVuelos.Model;
+using static Android.Widget.AdapterView;
 
 namespace AppVuelos
 {
@@ -20,6 +22,13 @@ namespace AppVuelos
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
             ((NavigationPage)Application.Current.MainPage).Title = "Solo Aereos";
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
+        }
+
+        private async void Button_Clicked(object sender,EventArgs e)
+        {
+            PaquetePage nuevapagina = new PaquetePage(();
+            await Navigation.PushAsync(nuevapagina);
+            ((Picker)sender).SelectedItem = null;
         }
     }
 }
