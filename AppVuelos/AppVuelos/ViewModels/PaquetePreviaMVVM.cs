@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 namespace AppVuelos.ViewModels
 {
-    public class PaquetePreviaMVVM :INotifyPropertyChanged
+    public class PaquetePreviaMVVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -28,12 +28,12 @@ namespace AppVuelos.ViewModels
 
         }
 
-        
+
         private Destino selectdestino;
 
         public Destino SelectDestino
         {
-            get { return selectdestino;}
+            get { return selectdestino; }
             set { selectdestino = value; VisHotel = false;
                 if (value == null)
                 {
@@ -42,9 +42,10 @@ namespace AppVuelos.ViewModels
                 else
                 {
                     VisCiudad = true;
-                    
+
                 }
-                CiudadesList= datastorge.Ciudadidentify(selectdestino.Name, CiudadesList);
+                _MyDestino = selectdestino.Name;
+                CiudadesList = datastorge.Ciudadidentify(selectdestino.Name, CiudadesList);
                 OnPropertyChanged();
             }
         }
@@ -54,7 +55,7 @@ namespace AppVuelos.ViewModels
         public Ciudad SelectCiudad
         {
             get { return selectciudad; }
-            set{ selectciudad = value;
+            set { selectciudad = value;
                 if (value == null)
                 {
                     VisHotel = false;
@@ -83,7 +84,7 @@ namespace AppVuelos.ViewModels
         public bool VisHotel
         {
             get { return vishotel; }
-            set { vishotel = value;OnPropertyChanged(); }
+            set { vishotel = value; OnPropertyChanged(); }
         }
 
 
@@ -96,7 +97,7 @@ namespace AppVuelos.ViewModels
         public List<Destino> DestinosList
         {
             get { return destinoslist; }
-            set { destinoslist = value;OnPropertyChanged(); }
+            set { destinoslist = value; OnPropertyChanged(); }
         }
 
         private List<Ciudad> ciudadeslist;
@@ -114,12 +115,21 @@ namespace AppVuelos.ViewModels
         public List<Hotel> HotelesList
         {
             get { return hoteleslist; }
-            set { hoteleslist = value;OnPropertyChanged(); }
+            set { hoteleslist = value; OnPropertyChanged(); }
+        }
+
+
+        private string _mydestino;
+
+        public string _MyDestino
+        {
+            get { return _mydestino; }
+            set { _mydestino = SelectDestino.Name; }
         }
 
 
 
     }
 
-
 }
+

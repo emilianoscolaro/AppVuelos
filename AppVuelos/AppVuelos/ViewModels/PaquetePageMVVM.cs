@@ -9,10 +9,9 @@ namespace AppVuelos.ViewModels
     {
         Model.Destino _item;
         Model.Hotel _itemH;
-        public PaquetePageMVVM(Model.Destino item,Model.Hotel itemH)
+        public PaquetePageMVVM(Model.Destino item)
         {
             _item = item;
-            _itemH = itemH;
         }
 
         private string _destino;

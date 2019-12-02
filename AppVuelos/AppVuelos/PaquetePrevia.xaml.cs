@@ -26,9 +26,9 @@ namespace AppVuelos
 
         private async void Button_Clicked(object sender,EventArgs e)
         {
-            PaquetePage nuevapagina = new PaquetePage(();
+            PaquetePage nuevapagina = new PaquetePage((Model.Destino)e.);
             await Navigation.PushAsync(nuevapagina);
-            ((Picker)sender).SelectedItem = null;
+            
         }
     }
 }

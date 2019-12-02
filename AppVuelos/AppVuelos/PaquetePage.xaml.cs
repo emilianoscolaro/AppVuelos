@@ -12,10 +12,10 @@ namespace AppVuelos
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PaquetePage : ContentPage
     {
-        public PaquetePage(Model.Destino item,Model.Hotel itemH)
+        public PaquetePage(Model.Destino  item)
         {
             InitializeComponent();
-            BindingContext = new PaquetePageMVVM(item, itemH);
+            BindingContext = new PaquetePageMVVM(item);
         }
     }
 }
