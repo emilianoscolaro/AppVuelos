@@ -102,7 +102,7 @@
                 </StackLayout>
                 <StackLayout Padding="30">
                     <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="#3f77d1" TextColor="White"
-                        FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1" Clicked="Button_Clicked"  />
+                        FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1" Command="{Binding Agregar}"  />
                 </StackLayout>
 
             </StackLayout>

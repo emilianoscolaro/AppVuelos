@@ -5,28 +5,30 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using AppVuelos.Model;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 namespace AppVuelos.ViewModels
 {
-    public class PaquetePreviaMVVM : INotifyPropertyChanged
+    public class PaquetePreviaMVVM : INotifyPropertyChanged 
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void OnPropertyChanged([CallerMemberName] string NombrePropiedad = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(NombrePropiedad));
-            }
-
-        }
-
-        public PaquetePreviaMVVM()
+        public PaquetePreviaMVVM(INavigation navigation)
         {
             DestinosList = datastorge.GetDestinos();
+            this.Navigation = navigation;
+            this.Agregar = new Command(async () => await GotoPPage());
             OnPropertyChanged();
 
         }
+
+        public INavigation Navigation { get; set; }
+
+        public async Task GotoPPage()
+        {
+            await Navigation.PushAsync(new PaquetePage(SelectDestino));
+        }
+
+
+
 
 
         private Destino selectdestino;
@@ -127,6 +129,27 @@ namespace AppVuelos.ViewModels
             set { _mydestino = SelectDestino.Name; }
         }
 
+
+
+        private Command agregarCommand;
+
+        public Command Agregar
+        {
+            get { return agregarCommand; }
+            set { agregarCommand = value; }
+        }
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged([CallerMemberName] string NombrePropiedad = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(NombrePropiedad));
+            }
+
+        }
 
 
     }

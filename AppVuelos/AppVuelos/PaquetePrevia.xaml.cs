@@ -18,7 +18,7 @@ namespace AppVuelos
         public PaquetePrevia()
         {
             InitializeComponent();
-            BindingContext = new PaquetePreviaMVVM();
+            BindingContext = new PaquetePreviaMVVM(Navigation);
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.Black;
             ((NavigationPage)Application.Current.MainPage).Title = "Solo Aereos";
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
@@ -26,8 +26,8 @@ namespace AppVuelos
 
         private async void Button_Clicked(object sender,EventArgs e)
         {
-            PaquetePage nuevapagina = new PaquetePage((Model.Destino)e.);
-            await Navigation.PushAsync(nuevapagina);
+          //  PaquetePage nuevapagina = new PaquetePage();
+          //  await Navigation.PushAsync(nuevapagina);
             
         }
     }
