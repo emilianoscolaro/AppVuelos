@@ -5,9 +5,54 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppVuelos.PaquetePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Titulo" TargetType="Label" >
+                <Setter Property="FontSize"  Value="15"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="labelstyle" TargetType="Label">
+                <Setter Property="FontSize"  Value="10"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout >
-            <Label Text="{Binding DestinoNombre}"/>
+        <StackLayout Orientation="Vertical" >
+            <Grid  HeightRequest="150">
+                <Image Source="{Binding DestinoImage}" Aspect="AspectFill" />
+                <Label Text="{Binding DestinoNombre}" TextColor="White" FontSize="35" FontAttributes="Bold"
+                       VerticalOptions="End" HorizontalOptions="EndAndExpand"/>
+            </Grid>
+            <StackLayout Orientation="Vertical" Padding="40" >
+                <Label Text="Aereos" Style="{StaticResource Titulo}"/>
+                <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Padding="40" >
+                <Label Text="Terrestres" Style="{StaticResource Titulo}"/>
+                <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                <Label Text="{Binding HotelNombre, StringFormat='*{0:N}'}"/>
+            </StackLayout>
+
+            <StackLayout Padding="30" VerticalOptions="EndAndExpand">
+                <Frame BorderColor="Gray" CornerRadius="20" HasShadow="True"  Padding="10" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding PickLeyenda}"  VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="Gray" HorizontalOptions="EndAndExpand"
+                                 ScaleX=".05"/>
+                        <Label Text="{Binding }" VerticalOptions="Center" FontAttributes="Bold" FontSize="17" 
+                       HorizontalOptions="End"/>
+                        <Label Text="{Binding Precio}" VerticalOptions="Center" FontAttributes="Bold" FontSize="17" 
+                       HorizontalOptions="End"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+
+
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

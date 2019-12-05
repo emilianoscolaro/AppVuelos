@@ -44,7 +44,7 @@
                     <Label Text="Hotel" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
-                <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}" x:Name="PHotel"
+                <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}" x:Name="PHotel" SelectedItem="{Binding SelectedHotel}"
                         ItemDisplayBinding="{Binding Name}" IsVisible="{Binding VisHotel}"/>
                 
                 
@@ -80,25 +80,15 @@
                     <Label Text="Precio" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
-                <Picker Title="--Seleccione leyenda--" >
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>Precio por PAX</x:String>
-                            <x:String>Precio por paquete</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
+                <Picker Title="--Seleccione leyenda--"  ItemsSource="{Binding PickerP}" SelectedItem="{Binding SelectedPick}"
+                        ItemDisplayBinding="{Binding Leyenda}"/>
+
                 <StackLayout Orientation="Horizontal" >
-                    <Picker Title="-Moneda-" WidthRequest="90">
-                        <Picker.ItemsSource>
-                            <x:Array Type="{x:Type x:String}">
-                                <x:String>U$D</x:String>
-                                <x:String>AR$</x:String>
-                            </x:Array>
-                        </Picker.ItemsSource>
-                    </Picker>
+                    <Picker Title="-Moneda-" WidthRequest="90" ItemsSource="{Binding PickerP}" SelectedItem="{Binding SelectedPick}"
+                            ItemDisplayBinding="{Binding Precio}"/>
                     <Label Text="$" Style="{StaticResource Titulo}"/>
-                    <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="25" FontAttributes="Bold"/>
+                    <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="25" FontAttributes="Bold"
+                           Text="{Binding Precio}"/>
                 </StackLayout>
                 <StackLayout Padding="30">
                     <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="#3f77d1" TextColor="White"

@@ -14,17 +14,19 @@ namespace AppVuelos.ViewModels
         public PaquetePreviaMVVM(INavigation navigation)
         {
             DestinosList = datastorge.GetDestinos();
+            PickerP = PickerAdd();
             this.Navigation = navigation;
             this.Agregar = new Command(async () => await GotoPPage());
             OnPropertyChanged();
 
         }
 
+
         public INavigation Navigation { get; set; }
 
         public async Task GotoPPage()
         {
-            await Navigation.PushAsync(new PaquetePage(SelectDestino));
+            await Navigation.PushAsync(new PaquetePage(SelectDestino,SelectedHotel,SelectedPick,Precio));
         }
 
 
@@ -72,6 +74,16 @@ namespace AppVuelos.ViewModels
             }
         }
 
+        private Hotel selectedhotel;
+
+        public Hotel SelectedHotel
+        {
+            get { return selectedhotel; }
+            set { selectedhotel = value; }
+        }
+
+
+
 
         private bool visciudad;
 
@@ -91,7 +103,7 @@ namespace AppVuelos.ViewModels
 
 
 
-
+        
         DataStorge datastorge = new DataStorge();
 
         private List<Destino> destinoslist;
@@ -149,6 +161,57 @@ namespace AppVuelos.ViewModels
                 PropertyChanged(this, new PropertyChangedEventArgs(NombrePropiedad));
             }
 
+        }
+
+
+        private string precio;
+
+        public string Precio
+        {
+            get { return precio; }
+            set { precio = value; }
+        }
+
+
+
+        /////////Check//////////
+
+
+
+
+
+
+
+        //////// PIKERS////////
+
+
+        public List<PickerList> PickerAdd()
+        {
+            var picker = new List<PickerList>()
+            {
+                new PickerList(){Precio ="U$D",Leyenda ="Precio por PAX"},
+                new PickerList(){Precio ="AR$",Leyenda ="Precio por paquete"},
+            };
+
+
+            return picker;
+        }
+
+
+        private List<PickerList> pickerp;
+
+        public List<PickerList> PickerP
+        {
+            get { return pickerp; }
+            set { pickerp = value; }
+        }
+
+        private PickerList selectedpick;
+
+        public PickerList SelectedPick
+        {
+            get { return selectedpick; }
+            set { selectedpick = value; }
         }
 
 

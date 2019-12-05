@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace AppVuelos.Model
 {
@@ -12,11 +13,11 @@ namespace AppVuelos.Model
         {
             var destinos = new List<Destino>()
             {
-                new Destino(){Name ="Cuba"},
-                new Destino(){Name ="Dominicana"},
-                new Destino(){Name ="E.E.U.U."},
-                new Destino(){Name ="Brasil"},
-                new Destino(){Name ="Colombia"},
+                new Destino(){Name ="Cuba  ",Foto ="cuba.png" },
+                new Destino(){Name ="Dominicana  ",Foto="punta_cana"},
+                new Destino(){Name ="E.E.U.U.  ",Foto ="usa"},
+                new Destino(){Name ="Brasil  ",Foto="brasil"},
+                new Destino(){Name ="Colombia  ",Foto="colombia"},
             };
             return destinos;
         }
@@ -138,16 +139,16 @@ namespace AppVuelos.Model
             DataStorge datastorge = new DataStorge();
             if(ciudad != null)
             {
-                if (ciudad == "Cuba")
+                if (ciudad == "Cuba  ")
                     lista = datastorge.GetCiudadesCuba();
-                if (ciudad == "Colombia")
+                if (ciudad == "Colombia  ")
                     lista = datastorge.GetCiudadesColombia();
-                if (ciudad == "Dominicana")
-                    lista = datastorge.GetCiudadesColombia();
-                if (ciudad == "E.E.U.U.")
-                    lista = datastorge.GetCiudadesColombia();
-                if (ciudad == "Brasil")
-                    lista = datastorge.GetCiudadesColombia();
+                if (ciudad == "Dominicana  ")
+                    lista = datastorge.GetCiudadesPUJ();
+                if (ciudad == "E.E.U.U.  ")
+                    lista = datastorge.GetCiudadesEEUU();
+                if (ciudad == "Brasil  ")
+                    lista = datastorge.GetCiudadesBrasil();
             }
             else
             {
@@ -169,6 +170,8 @@ namespace AppVuelos.Model
             return lista;
     
         }
+
+
 
 
 

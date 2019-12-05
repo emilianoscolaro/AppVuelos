@@ -12,10 +12,11 @@ namespace AppVuelos
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PaquetePage : ContentPage
     {
-        public PaquetePage(Model.Destino  item)
+        public PaquetePage(Model.Destino item, Model.Hotel Hitem, Model.PickerList Pick, string Precio)
         {
             InitializeComponent();
-            BindingContext = new PaquetePageMVVM(item);
+            BindingContext = new PaquetePageMVVM(item,Hitem,Pick,Precio);
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
