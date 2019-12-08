@@ -24,11 +24,9 @@ namespace AppVuelos
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
 
-        private async void Button_Clicked(object sender,EventArgs e)
-        {
-          //  PaquetePage nuevapagina = new PaquetePage();
-          //  await Navigation.PushAsync(nuevapagina);
-            
-        }
+
+      
+
+
     }
 }

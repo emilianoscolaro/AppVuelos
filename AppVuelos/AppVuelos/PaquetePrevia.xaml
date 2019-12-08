@@ -25,13 +25,11 @@
             <StackLayout Orientation="Vertical" Padding="40" Spacing="20">
                 <StackLayout>
 
-                    <Label Text="Destino" Style="{StaticResource Titulo}"/>
+                    <Label Text="Destino" Style="{StaticResource Titulo}" TextColor="#3f77d1"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
                 <Picker Title="--Seleccione destino--" ItemsSource="{Binding DestinosList}" x:Name="PDestino"
                         ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectDestino}"/>
-
-
                 <StackLayout IsVisible="{Binding VisCiudad}" >
                     <Label Text="Ciudad" Style="{StaticResource Titulo}"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
@@ -46,47 +44,102 @@
                 </StackLayout>
                 <Picker Title="--Seleccione Hotel--" ItemsSource="{Binding HotelesList}" x:Name="PHotel" SelectedItem="{Binding SelectedHotel}"
                         ItemDisplayBinding="{Binding Name}" IsVisible="{Binding VisHotel}"/>
-                
-                
+ 
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox/>
+                    <CheckBox IsChecked="{Binding ChekTransf}"/>
                     <Label Text="Trasnsfer IN/OUT" Style="{StaticResource labelstyle}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox/>
+                    <CheckBox IsChecked="{Binding CkAsistencia}"/>
                     <Label Text="Asistencia al viajero" Style="{StaticResource labelstyle}"/>
                 </StackLayout>
+
+
                 <StackLayout>
-                    <Label Text="Aereos" Style="{StaticResource Titulo}"/>
+                    <Label Text="Aéreos " Style="{StaticResource Titulo}" TextColor="#3f77d1"/>
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30" >
+                    <Picker Title="--Cnia--" HorizontalOptions="FillAndExpand" ItemsSource="{Binding PCompania}"
+                            ItemDisplayBinding="{Binding Compania}"  SelectedItem="{Binding SelectedPCia}"/>
+                    <Picker Title="--escalas--" HorizontalOptions="FillAndExpand" ItemsSource="{Binding PEscala}"
+                            ItemDisplayBinding="{Binding Escalas}" SelectedItem="{Binding SelectedEscala}"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Ida" Style="{StaticResource Titulo}" />
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
-                    <Label Text="PNR" VerticalOptions="Center" FontSize="17" FontAttributes="Bold" TextColor="Black"/>
-                    <Entry  WidthRequest="150" />
+                    <Label Text="Fecha " Style="{StaticResource labelstyle}"/>
+                    <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateSalida}" MinimumDate="{Binding DateSalida}"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Hora salida" Style="{StaticResource labelstyle}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Hs."
+                            ItemsSource="{Binding PHs}" ItemDisplayBinding="{Binding Hora}" SelectedItem="{Binding SelectedSalidaHs}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Min."
+                            ItemsSource="{Binding PMin}" ItemDisplayBinding="{Binding Minutos}" SelectedItem="{Binding SelectedSalidaMin}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Hora llegada" Style="{StaticResource labelstyle}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Hs."
+                            ItemsSource="{Binding PHs}" ItemDisplayBinding="{Binding Hora}" SelectedItem="{Binding SelectedLlegadaHs}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Min."
+                            ItemsSource="{Binding PMin}" ItemDisplayBinding="{Binding Minutos}" SelectedItem="{Binding SeletedLlegadaMin}"/>
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="Vuelta" Style="{StaticResource Titulo}" />
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Fecha " Style="{StaticResource labelstyle}"/>
+                    <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateLlegada}" MinimumDate="{Binding DateLlegada}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Hora salida" Style="{StaticResource labelstyle}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Hs."
+                            ItemsSource="{Binding PHs}" ItemDisplayBinding="{Binding Hora}" SelectedItem="{Binding SelectedSalidaHsV}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Min."
+                            ItemsSource="{Binding PMin}" ItemDisplayBinding="{Binding Minutos}" SelectedItem="{Binding SelectedSalidaMinV}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Hora llegada" Style="{StaticResource labelstyle}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Hs."
+                            ItemsSource="{Binding PHs}" ItemDisplayBinding="{Binding Hora}" SelectedItem="{Binding SelectedLlegadaHsV}"/>
+                    <Picker HorizontalOptions="FillAndExpand" Title="Min."
+                            ItemsSource="{Binding PMin}" ItemDisplayBinding="{Binding Minutos}" SelectedItem="{Binding SeletedLlegadaMinV}"/>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding CkTrasladoCasa}"/>
+                    <Label Text="Traslado casa/aeropuerto" Style="{StaticResource labelstyle}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox/>
+                    <CheckBox IsChecked="{Binding CkValija}"/>
                     <Label Text="Con valija en bodega" Style="{StaticResource labelstyle}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox/>
+                    <CheckBox IsChecked="{Binding CkBolso}"/>
                     <Label Text="Con bolso de mano" Style="{StaticResource labelstyle}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <CheckBox/>
-                    <Label Text="Traslado casa/aeropuerto" Style="{StaticResource labelstyle}"/>
-                </StackLayout>
+
+
+
+
+
                 <StackLayout>
-                    <Label Text="Precio" Style="{StaticResource Titulo}"/>
+                    <Label Text="Precio" Style="{StaticResource Titulo}" TextColor="#3f77d1"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
                 <Picker Title="--Seleccione leyenda--"  ItemsSource="{Binding PickerP}" SelectedItem="{Binding SelectedPick}"
                         ItemDisplayBinding="{Binding Leyenda}"/>
-
                 <StackLayout Orientation="Horizontal" >
                     <Picker Title="-Moneda-" WidthRequest="90" ItemsSource="{Binding PickerP}" SelectedItem="{Binding SelectedPick}"
                             ItemDisplayBinding="{Binding Precio}"/>
-                    <Label Text="$" Style="{StaticResource Titulo}"/>
+                    <Label Text="$" Style="{StaticResource Titulo}" VerticalOptions="CenterAndExpand"/>
                     <Entry HorizontalOptions="FillAndExpand" Keyboard="Numeric" FontSize="25" FontAttributes="Bold"
                            Text="{Binding Precio}"/>
                 </StackLayout>

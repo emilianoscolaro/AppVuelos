@@ -9,10 +9,10 @@
 
     <ContentPage.Content>
         <AbsoluteLayout>
-            <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.2,.7,.2"
+            <Button x:Name="AereosButtom" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.2,.7,.2"
                     Text="SOLO VUELOS" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold"
                     Clicked="Button_Clicked_2"/>
-            <Button AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.8,.7,.2"
+            <Button x:Name="PaqueteButton" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.8,.7,.2"
                     Text="PAQUETES" FontSize="30" BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold" Clicked="Button_Clicked_3"/>
         </AbsoluteLayout>
     </ContentPage.Content>

@@ -14,22 +14,201 @@ namespace AppVuelos.ViewModels
         public PaquetePreviaMVVM(INavigation navigation)
         {
             DestinosList = datastorge.GetDestinos();
-            PickerP = PickerAdd();
+            PCompania = datastorge.PCompaniaAdd();
+            PEscala = datastorge.PEscalaAdd();
+            PHs = datastorge.PHsAdd();
+            PMin = datastorge.PMinAdd();
+            PickerP = datastorge.PickerAdd();
             this.Navigation = navigation;
             this.Agregar = new Command(async () => await GotoPPage());
             OnPropertyChanged();
+            
 
         }
 
 
         public INavigation Navigation { get; set; }
 
-        public async Task GotoPPage()
+        private PickerList selectedllegadaminv;
+
+        public PickerList SeletedLlegadaMinV
         {
-            await Navigation.PushAsync(new PaquetePage(SelectDestino,SelectedHotel,SelectedPick,Precio));
+            get { return selectedllegadaminv; }
+            set { selectedllegadaminv = value; }
         }
 
 
+
+        private PickerList selectedllegadahsv;
+
+        public PickerList SelectedLlegadaHsV
+        {
+            get { return selectedllegadahsv; }
+            set { selectedllegadahsv = value; }
+        }
+
+
+
+        private PickerList selectedsalidaminv;
+
+        public PickerList SelectedSalidaMinV
+        {
+            get { return selectedsalidaminv; }
+            set { selectedsalidaminv = value; }
+        }
+
+
+        private PickerList selectedSalidaHsv;
+
+        public PickerList SelectedSalidaHsV
+        {
+            get { return selectedSalidaHsv; }
+            set { selectedSalidaHsv = value; }
+        }
+
+
+
+
+
+
+
+
+        private PickerList selectedllegadamin;
+
+        public PickerList SeletedLlegadaMin
+        {
+            get { return selectedllegadamin; }
+            set { selectedllegadamin = value; }
+        }
+
+
+
+        private PickerList selectedllegadahs;
+
+        public PickerList SelectedLlegadaHs
+        {
+            get { return selectedllegadahs; }
+            set { selectedllegadahs = value; }
+        }
+
+
+
+        private PickerList selectedsalidamin;
+
+        public PickerList SelectedSalidaMin
+        {
+            get { return selectedsalidamin; }
+            set { selectedsalidamin = value; }
+        }
+
+
+        private PickerList selectedSalidaHs;
+
+        public PickerList SelectedSalidaHs
+        {
+            get { return selectedSalidaHs; }
+            set { selectedSalidaHs = value; }
+        }
+
+
+        private PickerList selectedescala;
+
+        public PickerList SelectedEscala
+        {
+            get { return selectedescala; }
+            set { selectedescala = value; }
+        }
+
+
+
+        private PickerList selectedpcia;
+
+        public PickerList SelectedPCia
+        {
+            get { return selectedpcia; }
+            set { selectedpcia = value; }
+        }
+
+
+        private List<PickerList> pmin;
+
+        public List<PickerList> PMin
+        {
+            get { return pmin; }
+            set { pmin = value; }
+        }
+
+        private List<PickerList> phs;
+
+        public List<PickerList> PHs
+        {
+            get { return phs; }
+            set { phs = value; }
+        }
+
+        private List<PickerList> pescala;
+
+        public List<PickerList> PEscala
+        {
+            get { return pescala; }
+            set { pescala = value; }
+        }
+
+
+
+        private List<PickerList> pcompania;
+
+        public List<PickerList> PCompania
+        {
+            get { return pcompania; }
+            set { pcompania = value; }
+        }
+
+
+
+        DataStorge dt = new DataStorge();
+
+        private DateTime datellegada;
+
+        public DateTime DateLlegada
+        {
+            get { return datellegada; }
+            set
+            {
+                if (datellegada == DateTime.Today)
+                {
+                    datellegada = value;
+                }
+                else
+                {
+                    datellegada = DateTime.Today;
+                    OnPropertyChanged();
+                }
+
+            }
+        }
+
+
+        private DateTime datesalida;
+
+        public DateTime DateSalida
+        {
+            get { return datesalida; }
+            set
+            {
+                if (datesalida == DateTime.Today)
+                {
+                    datesalida = value;
+                }
+                else
+                {
+                    datesalida = DateTime.Today;
+                    OnPropertyChanged();
+                }
+
+            }
+
+        }
 
 
 
@@ -38,16 +217,13 @@ namespace AppVuelos.ViewModels
         public Destino SelectDestino
         {
             get { return selectdestino; }
-            set { selectdestino = value; VisHotel = false;
-                if (value == null)
-                {
-                    VisCiudad = false;
-                }
-                else
+            set { selectdestino = value;
+
+                if (value != null)
                 {
                     VisCiudad = true;
-
                 }
+
                 _MyDestino = selectdestino.Name;
                 CiudadesList = datastorge.Ciudadidentify(selectdestino.Name, CiudadesList);
                 OnPropertyChanged();
@@ -60,14 +236,9 @@ namespace AppVuelos.ViewModels
         {
             get { return selectciudad; }
             set { selectciudad = value;
-                if (value == null)
-                {
-                    VisHotel = false;
-                }
-                else
+                if (value != null)
                 {
                     VisHotel = true;
-
                 }
                 HotelesList = datastorge.Hoteldidentify(selectciudad.Name, HotelesList);
                 OnPropertyChanged();
@@ -100,7 +271,6 @@ namespace AppVuelos.ViewModels
             get { return vishotel; }
             set { vishotel = value; OnPropertyChanged(); }
         }
-
 
 
         
@@ -151,6 +321,16 @@ namespace AppVuelos.ViewModels
             set { agregarCommand = value; }
         }
 
+        public async Task GotoPPage()
+        {
+            await Navigation.PushAsync(new PaquetePage(SelectDestino, SelectedHotel, SelectedPick, Precio,ChekTransf,CkAsistencia,CkBolso,CkTrasladoCasa,CkValija
+                 ,DateSalida,DateLlegada,SelectedPCia,SelectedEscala,SelectedSalidaHs,SelectedSalidaHsV,SelectedLlegadaHs,SelectedLlegadaHsV,
+                 SelectedSalidaMin,SelectedSalidaMinV,SeletedLlegadaMin,SeletedLlegadaMinV));
+        }
+
+
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -177,25 +357,50 @@ namespace AppVuelos.ViewModels
         /////////Check//////////
 
 
+        private bool checktransf;
 
+        public bool ChekTransf
+        {
+            get { return checktransf; }
+            set { checktransf = value;OnPropertyChanged(); }
+        }
 
+        private bool ckAsistencia;
 
+        public bool CkAsistencia
+        {
+            get { return ckAsistencia; }
+            set { ckAsistencia = value; OnPropertyChanged(); }
+        }
 
+        private bool ckValija;
+
+        public bool CkValija
+        {
+            get { return ckValija; }
+            set { ckValija = value; OnPropertyChanged(); }
+        }
+
+        private bool ckBolso;
+
+        public bool CkBolso
+        {
+            get { return ckBolso; }
+            set { ckBolso = value; OnPropertyChanged(); }
+        }
+
+        private bool ckTrasladoCasa;
+
+        public bool CkTrasladoCasa
+        {
+            get { return ckTrasladoCasa; }
+            set { ckTrasladoCasa = value; OnPropertyChanged(); }
+        }
 
         //////// PIKERS////////
 
 
-        public List<PickerList> PickerAdd()
-        {
-            var picker = new List<PickerList>()
-            {
-                new PickerList(){Precio ="U$D",Leyenda ="Precio por PAX"},
-                new PickerList(){Precio ="AR$",Leyenda ="Precio por paquete"},
-            };
 
-
-            return picker;
-        }
 
 
         private List<PickerList> pickerp;
@@ -215,7 +420,9 @@ namespace AppVuelos.ViewModels
         }
 
 
+
     }
+
 
 }
 
