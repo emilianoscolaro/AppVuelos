@@ -4,35 +4,69 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppVuelos.Aereos"
-             BackgroundImageSource="paquetes">
+             x:Class="AppVuelos.Aereos">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Titulo" TargetType="Label" >
+                <Setter Property="FontSize"  Value="15"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
+            <Style x:Key="labelstyle" TargetType="Label">
+                <Setter Property="FontSize"  Value="10"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <AbsoluteLayout Padding="0">
-            <Image Source=""  
-                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="1,.6,1,4.6"/>
-            <Label Text="Aereos" FontSize="35" TextColor="White" FontAttributes="Bold"
-                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".9,.3,.35,.25"/>
-            <Label Text=" 3  LA8010 L 16DEC 1 EZELIM HK2  0355 0650  16DEC  E  LA/IQHJBP 
-  4  LA2216 S 17DEC 2 LIMTYL HK2  1223 1410  17DEC  E  LA/IQHJBP
-  5  LA2079 B 18DEC 3*TYLLIM HK2  1928 2100  18DEC  E  LA/IQHJBP
-  6  LA2467 S 19DEC 4*LIMEZE HK2  0010 0635  19DEC"
-                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.47,.8,.2" />
-            <Label Text="* Con valija en bodega"
-                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.6,.9,.03"  />
-            <Label Text="* Con valija en bodega"
-                   AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.65,.9,.03"  />
-            <Frame AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".5,.9,.9,.08"
-                   BorderColor="Gray" CornerRadius="20" HasShadow="True"  Padding="10">
-                <StackLayout Orientation="Horizontal"  >
-                    <Label Text="      Precio por persona" VerticalOptions="Center"  />
-                    
-                    <Label Text="U$D.2650" VerticalOptions="Center" FontAttributes="Bold" FontSize="17" 
-                       HorizontalOptions="EndAndExpand"/> 
-                </StackLayout> 
-            </Frame>
-            <BoxView BackgroundColor="Gray" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds=".66,.89,.002,.05"/>
+        <StackLayout Orientation="Vertical" >
+            <Grid  HeightRequest="200">
+                <Image Source="fotoaereos" Aspect="AspectFill" />
+                <Label Text="Aéreos  " TextColor="White" FontSize="35" FontAttributes="Bold"
+                       VerticalOptions="End" HorizontalOptions="EndAndExpand"/>
+            </Grid>
+            <StackLayout Orientation="Vertical" Padding="40" >
+                <Label Text="Aéreos " Style="{StaticResource Titulo}"/>
+                <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Cia, StringFormat='Aéreos de {0:N}'}"/>
+                    <Label Text="{Binding Escalas}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <Label Text="{Binding Salida,StringFormat='Fecha {0:dd-MM}'}"/>
+                    <Label Text="{Binding Shs,StringFormat='  Sale :{0:N}'}"/>
+                    <Label Text="{Binding Smin ,StringFormat=':{0:N}'}"/>
+                    <Label Text="{Binding Lhs ,StringFormat='  Llega {0:N}'}"/>
+                    <Label Text="{Binding LMin ,StringFormat=':{0:N}'}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="0">
+                    <Label Text="{Binding Llegada,StringFormat='Fecha {0:dd-MM}'}"/>
+                    <Label Text="{Binding ShsV,StringFormat='  Sale :{0:N}'}"/>
+                    <Label Text="{Binding SminV ,StringFormat=':{0:N}'}"/>
+                    <Label Text="{Binding LhsV ,StringFormat='  Llega {0:N}'}"/>
+                    <Label Text="{Binding LMinV ,StringFormat=':{0:N}'}"/>
+                </StackLayout>
+                <Label Text="{Binding CKValija} "  IsVisible="{Binding IsVisibleC}"/>
+                <Label Text="{Binding CkBolso}" IsVisible="{Binding IsVisibleB}"/>
+            </StackLayout>
+            <StackLayout Padding="30" VerticalOptions="EndAndExpand">
+                <Frame BorderColor="Gray" CornerRadius="20" HasShadow="True"  Padding="10" HeightRequest="40">
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding PickLeyenda}"  VerticalOptions="Center"/>
+                        <BoxView BackgroundColor="Gray" HorizontalOptions="EndAndExpand"
+                                 ScaleX=".05"/>
+                        <Label Text="{Binding PickPrecio}" VerticalOptions="Center" FontAttributes="Bold" FontSize="17" 
+                       HorizontalOptions="End"/>
+                        <Label Text="{Binding Precio}" VerticalOptions="Center" FontAttributes="Bold" FontSize="17" 
+                       HorizontalOptions="End"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
 
-        </AbsoluteLayout>
 
+
+
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

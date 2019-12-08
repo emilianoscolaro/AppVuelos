@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
@@ -43,7 +44,6 @@ namespace AppVuelos.Model
             {
                 new Ciudad(){Name ="Cartagena"},
                 new Ciudad(){Name ="San andres"},
-                new Ciudad(){Name ="Santa Marta"},
             };
             return ciudades;
         }
@@ -110,10 +110,10 @@ namespace AppVuelos.Model
         {
             var hoteles = new List<Hotel>()
             {
-                new Hotel(){Name ="1",},
-                new Hotel(){Name ="2"},
-                new Hotel(){Name ="3"},
-                new Hotel(){Name ="4"},
+                new Hotel(){Name ="Iberostar Selection Varadero",},
+                new Hotel(){Name ="Blau Varadero"},
+                new Hotel(){Name ="Meliá Varadero"},
+                new Hotel(){Name ="Sol Palmeras Hotel"},
 
             };
             return hoteles;
@@ -123,13 +123,137 @@ namespace AppVuelos.Model
         {
             var hoteles = new List<Hotel>()
             {
-                new Hotel(){Name ="H1"},
-                new Hotel(){Name ="H2"},
-                new Hotel(){Name ="H3"},
-                new Hotel(){Name ="H4"},
+                new Hotel(){Name ="Hotel NH Capri La Habana"},
+                new Hotel(){Name ="Iberostar Parque Central"},
+                new Hotel(){Name ="Elegancia Suites Habana"},
+                new Hotel(){Name ="La Reserva Vedado"},
 
             };
             return hoteles;
+
+        }
+
+        public List<Hotel> GetHotelesCayoGuillermo()
+        {
+            var hoteles = new List<Hotel>()
+            {
+                new Hotel(){Name ="Sercotel Club Cayo Guillermo"},
+                new Hotel(){Name ="Sol Cayo Guillermo"},
+                new Hotel(){Name ="Iberostar Daiquiri"},
+                new Hotel(){Name ="Iberostar Selection Playa Pilar"},
+
+            };
+            return hoteles;
+
+        }
+
+        public List<Hotel> GetHotelesCayoSMaria()
+        {
+            var hoteles = new List<Hotel>()
+            {
+                new Hotel(){Name ="Meliá Cayo Santa María"},
+                new Hotel(){Name ="Sol Cayo Santa María All Inclusive"},
+                new Hotel(){Name ="Playa Cayo Santa Maria"},
+                new Hotel(){Name ="Ocean Casa Del Mar"},
+
+            };
+            return hoteles;
+
+        }
+
+        public List<Hotel> GetHotelesCayococo()
+        {
+            var hoteles = new List<Hotel>()
+            {
+                new Hotel(){Name ="Hotel Colonial Cayo Coco"},
+                new Hotel(){Name ="Hotel Tryp Cayo Coco"},
+                new Hotel(){Name ="Iberostar Mojito"},
+                new Hotel(){Name ="Melia Cayo Coco"},
+
+            };
+            return hoteles;
+
+        }
+
+        public List<Hotel> GetHotelesCartagena()
+        {
+            var hoteles = new List<Hotel>()
+            {
+                new Hotel(){Name ="Hostal Republica Cartagena"},
+                new Hotel(){Name ="Ibis Hotel Cartagena"},
+                new Hotel(){Name ="Hilton Cartagena"},
+                new Hotel(){Name ="Casa India Catalina"},
+
+            };
+            return hoteles;
+
+        }
+
+        public List<Hotel> GetHotelesSanAndres()
+        {
+            var hoteles = new List<Hotel>()
+            {
+                new Hotel(){Name ="Hotel Sea Horse"},
+                new Hotel(){Name ="GHL Relax Hotel Sunrise"},
+                new Hotel(){Name ="Hotel San Luis Place"},
+                new Hotel(){Name ="Hotel Cocoplum Beach"},
+
+            };
+            return hoteles;
+
+        }
+
+        public List<Hotel> GetHotelesSantaMarta()
+        {
+            var hoteles = new List<Hotel>()
+            {
+                new Hotel(){Name ="Hotel Sea Horse"},
+                new Hotel(){Name ="GHL Relax Hotel Sunrise"},
+                new Hotel(){Name ="Hotel San Luis Place"},
+                new Hotel(){Name ="Hotel Cocoplum Beach"},
+
+            };
+            return hoteles;
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        public List<Hotel> Hoteldidentify(string ciudad, List<Hotel> lista)
+        {
+            DataStorge datastorge = new DataStorge();
+            if (ciudad != null)
+            {
+                if (ciudad == "Varadero")
+                    lista = datastorge.GetHotelesVaradero().OrderBy(t => t.Name).ToList();
+                if (ciudad == "La Habana")
+                    lista = datastorge.GetHotelesHabana().OrderBy(t => t.Name).ToList();
+                if (ciudad == "Cayo Guillermo")
+                    lista = datastorge.GetHotelesCayoGuillermo().OrderBy(t => t.Name).ToList();
+                if (ciudad == "Cayo Santa Maria")
+                    lista = datastorge.GetHotelesCayoSMaria().OrderBy(t => t.Name).ToList();
+                if (ciudad == "Cayo Coco")
+                    lista = datastorge.GetHotelesCayococo().OrderBy(t => t.Name).ToList();
+                if (ciudad == "Cartagena")
+                    lista = datastorge.GetHotelesCartagena().OrderBy(t => t.Name).ToList();
+                if (ciudad == "San andres")
+                    lista = datastorge.GetHotelesSanAndres().OrderBy(t => t.Name).ToList();
+
+
+
+
+
+
+            }
+            return lista;
 
         }
 
@@ -140,15 +264,15 @@ namespace AppVuelos.Model
             if(ciudad != null)
             {
                 if (ciudad == "Cuba  ")
-                    lista = datastorge.GetCiudadesCuba();
+                    lista = datastorge.GetCiudadesCuba().OrderBy(t => t.Name).ToList();
                 if (ciudad == "Colombia  ")
-                    lista = datastorge.GetCiudadesColombia();
+                    lista = datastorge.GetCiudadesColombia().OrderBy(t => t.Name).ToList();
                 if (ciudad == "Dominicana  ")
-                    lista = datastorge.GetCiudadesPUJ();
+                    lista = datastorge.GetCiudadesPUJ().OrderBy(t => t.Name).ToList();
                 if (ciudad == "E.E.U.U.  ")
-                    lista = datastorge.GetCiudadesEEUU();
+                    lista = datastorge.GetCiudadesEEUU().OrderBy(t => t.Name).ToList();
                 if (ciudad == "Brasil  ")
-                    lista = datastorge.GetCiudadesBrasil();
+                    lista = datastorge.GetCiudadesBrasil().OrderBy(t => t.Name).ToList();
             }
             else
             {
@@ -157,19 +281,7 @@ namespace AppVuelos.Model
             return lista;
         }
 
-        public List<Hotel> Hoteldidentify(string ciudad, List<Hotel> lista)
-        {
-            DataStorge datastorge = new DataStorge();
-            if (ciudad != null)
-            {
-                if (ciudad == "Varadero")
-                    lista = datastorge.GetHotelesVaradero();
-                if (ciudad == "La Habana")
-                    lista = datastorge.GetHotelesHabana();
-            }
-            return lista;
-    
-        }
+
 
 
 

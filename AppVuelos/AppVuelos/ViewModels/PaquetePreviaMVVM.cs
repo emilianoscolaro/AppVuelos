@@ -6,6 +6,7 @@ using System.ComponentModel;
 using AppVuelos.Model;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace AppVuelos.ViewModels
 {
@@ -13,7 +14,7 @@ namespace AppVuelos.ViewModels
     {
         public PaquetePreviaMVVM(INavigation navigation)
         {
-            DestinosList = datastorge.GetDestinos();
+            DestinosList = datastorge.GetDestinos().OrderBy(t =>t.Name).ToList();
             PCompania = datastorge.PCompaniaAdd();
             PEscala = datastorge.PEscalaAdd();
             PHs = datastorge.PHsAdd();
@@ -21,6 +22,7 @@ namespace AppVuelos.ViewModels
             PickerP = datastorge.PickerAdd();
             this.Navigation = navigation;
             this.Agregar = new Command(async () => await GotoPPage());
+            this.SiguienteBtn = new Command(async () => await GotoPPageAereos());
             OnPropertyChanged();
             
 
@@ -321,11 +323,61 @@ namespace AppVuelos.ViewModels
             set { agregarCommand = value; }
         }
 
+
+        private Command siguientebtn;
+
+        public Command SiguienteBtn
+        {
+            get { return siguientebtn; }
+            set { siguientebtn = value; }
+        }
+
+
+
         public async Task GotoPPage()
         {
-            await Navigation.PushAsync(new PaquetePage(SelectDestino, SelectedHotel, SelectedPick, Precio,ChekTransf,CkAsistencia,CkBolso,CkTrasladoCasa,CkValija
-                 ,DateSalida,DateLlegada,SelectedPCia,SelectedEscala,SelectedSalidaHs,SelectedSalidaHsV,SelectedLlegadaHs,SelectedLlegadaHsV,
-                 SelectedSalidaMin,SelectedSalidaMinV,SeletedLlegadaMin,SeletedLlegadaMinV));
+            if(SelectDestino !=null && SelectDestino!= null && SelectedPick != null && Precio != null && DateSalida != null && DateLlegada != null &&
+               SelectedPCia != null && SelectedEscala != null && SelectedSalidaHs != null && SelectedSalidaHsV != null && SelectedLlegadaHs != null
+               && SelectedLlegadaHsV != null && SelectedSalidaMin != null && SelectedSalidaMinV != null && SeletedLlegadaMin != null && SeletedLlegadaMin != null)
+            {
+                await Navigation.PushAsync(new PaquetePage(SelectDestino, SelectedHotel, SelectedPick, Precio, ChekTransf, CkAsistencia, CkBolso, CkTrasladoCasa, CkValija
+              , DateSalida, DateLlegada, SelectedPCia, SelectedEscala, SelectedSalidaHs, SelectedSalidaHsV, SelectedLlegadaHs, SelectedLlegadaHsV,
+                SelectedSalidaMin, SelectedSalidaMinV, SeletedLlegadaMin, SeletedLlegadaMinV));
+            }
+            else
+            {
+                HayError = true;
+            }
+            
+
+        }
+
+
+        public async Task GotoPPageAereos()
+        {
+            if (SelectedPick != null && Precio != null && DateSalida != null && DateLlegada != null &&
+               SelectedPCia != null && SelectedEscala != null && SelectedSalidaHs != null && SelectedSalidaHsV != null && SelectedLlegadaHs != null
+               && SelectedLlegadaHsV != null && SelectedSalidaMin != null && SelectedSalidaMinV != null && SeletedLlegadaMin != null && SeletedLlegadaMin != null)
+            {
+                await Navigation.PushAsync(new Aereos(SelectedPick, Precio, ChekTransf, CkBolso, CkTrasladoCasa, CkValija
+              , DateSalida, DateLlegada, SelectedPCia, SelectedEscala, SelectedSalidaHs, SelectedSalidaHsV, SelectedLlegadaHs, SelectedLlegadaHsV,
+                SelectedSalidaMin, SelectedSalidaMinV, SeletedLlegadaMin, SeletedLlegadaMinV));
+            }
+            else
+            {
+                HayError = true;
+            }
+
+
+        }
+
+
+        private bool hayerror;
+
+        public bool HayError
+        {
+            get { return hayerror; }
+            set { hayerror = value;OnPropertyChanged(); }
         }
 
 

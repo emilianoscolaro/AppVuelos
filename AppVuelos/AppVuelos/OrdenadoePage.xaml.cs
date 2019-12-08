@@ -21,10 +21,5 @@ namespace AppVuelos
             ((NavigationPage)Application.Current.MainPage).BarTextColor = Color.White;
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            Aereos nuevapagina = new Aereos();
-            await Navigation.PushAsync(nuevapagina);
-        }
     }
 }

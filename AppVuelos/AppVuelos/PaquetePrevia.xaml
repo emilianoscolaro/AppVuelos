@@ -146,6 +146,8 @@
                 <StackLayout Padding="30">
                     <Button Text="Siguiente" BorderColor="Black" FontSize="20" BackgroundColor="#3f77d1" TextColor="White"
                         FontAttributes="Bold" VerticalOptions="Center" BorderWidth="1" Command="{Binding Agregar}"  />
+                    <Label Text="Por favor,complete todos los campos para continual" Style="{StaticResource labelstyle}" TextColor="Red"
+                           IsVisible="{Binding HayError}" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
 
             </StackLayout>
