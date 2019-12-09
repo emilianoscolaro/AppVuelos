@@ -28,11 +28,16 @@ namespace AppVuelos.ViewModels
         Model.PickerList _sminv;
         Model.PickerList _lmin;
         Model.PickerList _lminv;
+        Model.Aeropuerto _ii;
+        Model.Aeropuerto _iv;
+        Model.Aeropuerto _vi;
+        Model.Aeropuerto _vv;
 
 
         public AereosMVVM(Model.PickerList Pick, string Precio, bool CheckTransfer, bool CkBolso, bool CkTrasladoCasa, bool CkValija,
            DateTime Salida, DateTime Llegada, Model.PickerList Cia, Model.PickerList Escala, Model.PickerList Shs, Model.PickerList ShsV, Model.PickerList Lhs
-            , Model.PickerList LhsV, Model.PickerList Smin, Model.PickerList SminV, Model.PickerList Lmin, Model.PickerList LminV)
+            , Model.PickerList LhsV, Model.PickerList Smin, Model.PickerList SminV, Model.PickerList Lmin, Model.PickerList LminV, Model.Aeropuerto Ii,
+            Model.Aeropuerto Iv, Model.Aeropuerto Vi, Model.Aeropuerto Vv)
         {
 
             _pick = Pick;
@@ -53,9 +58,49 @@ namespace AppVuelos.ViewModels
             _sminv = SminV;
             _lmin = Lmin;
             _lminv = LminV;
+            _ii =Ii;
+            _iv = Iv;
+            _vi = Vi;
+            _vv = Vv;
 
 
         }
+
+
+        private string ii;
+
+        public string Ii
+        {
+            get { return _ii.Codigo; }
+            set { _ii.Codigo = value; }
+        }
+
+        private string iv;
+
+        public string Iv
+        {
+            get { return _iv.Codigo; }
+            set { _iv.Codigo = value; }
+        }
+
+        private string vi;
+
+        public string Vi
+        {
+            get { return _vi.Codigo; }
+            set { _vi.Codigo = value; }
+        }
+
+        private string vv;
+
+        public string Vv
+        {
+            get { return _vv.Codigo; }
+            set { _vv.Codigo = value; }
+        }
+
+
+
 
 
         private string lminv;

@@ -14,11 +14,12 @@ namespace AppVuelos
     {
         public Aereos(Model.PickerList Pick, string Precio, bool CheckTransfer, bool CkBolso, bool CkTrasladoCasa, bool CkValija,
            DateTime Salida, DateTime Llegada, Model.PickerList Cia, Model.PickerList Escala, Model.PickerList Shs, Model.PickerList ShsV, Model.PickerList Lhs
-            , Model.PickerList LhsV, Model.PickerList Smin, Model.PickerList SminV, Model.PickerList Lmin, Model.PickerList LminV)
+            , Model.PickerList LhsV, Model.PickerList Smin, Model.PickerList SminV, Model.PickerList Lmin, Model.PickerList LminV,Model.Aeropuerto Ii,
+            Model.Aeropuerto Iv, Model.Aeropuerto Vi, Model.Aeropuerto Vv)
         {
             InitializeComponent();
             BindingContext = new AereosMVVM(Pick, Precio, CheckTransfer, CkBolso, CkTrasladoCasa, CkValija, Salida
-          , Llegada, Cia, Escala, Shs, ShsV, Lhs, LhsV, Smin, SminV, Lmin, LminV);
+          , Llegada, Cia, Escala, Shs, ShsV, Lhs, LhsV, Smin, SminV, Lmin, LminV,Ii,Iv,Vi,Vv);
             NavigationPage.SetHasNavigationBar(this, false);
 
         }

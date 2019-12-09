@@ -20,6 +20,7 @@ namespace AppVuelos.ViewModels
             PHs = datastorge.PHsAdd();
             PMin = datastorge.PMinAdd();
             PickerP = datastorge.PickerAdd();
+            PAeropuerto = datastorge.PickAeropuertos();
             this.Navigation = navigation;
             this.Agregar = new Command(async () => await GotoPPage());
             this.SiguienteBtn = new Command(async () => await GotoPPageAereos());
@@ -361,7 +362,7 @@ namespace AppVuelos.ViewModels
             {
                 await Navigation.PushAsync(new Aereos(SelectedPick, Precio, ChekTransf, CkBolso, CkTrasladoCasa, CkValija
               , DateSalida, DateLlegada, SelectedPCia, SelectedEscala, SelectedSalidaHs, SelectedSalidaHsV, SelectedLlegadaHs, SelectedLlegadaHsV,
-                SelectedSalidaMin, SelectedSalidaMinV, SeletedLlegadaMin, SeletedLlegadaMinV));
+                SelectedSalidaMin, SelectedSalidaMinV, SeletedLlegadaMin, SeletedLlegadaMinV, SelectedPAIda,SelectedPAIdaV,SelectedPAVueltaI,SelectedPAVuelta));
             }
             else
             {
@@ -370,6 +371,38 @@ namespace AppVuelos.ViewModels
 
 
         }
+
+
+        private Aeropuerto selectedpaeropuerto;
+
+        public Aeropuerto SelectedPAIda
+        {
+            get { return selectedpaeropuerto; }
+            set { selectedpaeropuerto = value; }
+        }
+
+        private Aeropuerto selectedpaeropuertoiv;
+
+        public Aeropuerto SelectedPAIdaV
+        {
+            get { return selectedpaeropuertoiv; }
+            set { selectedpaeropuertoiv = value; }
+        }
+        private Aeropuerto selectedpaeropuertovuelta;
+
+        public Aeropuerto SelectedPAVueltaI
+        {
+            get { return selectedpaeropuertovuelta; }
+            set { selectedpaeropuertovuelta = value; }
+        }
+        private Aeropuerto selectedpaeropuertovueltav;
+
+        public Aeropuerto SelectedPAVuelta
+        {
+            get { return selectedpaeropuertovueltav; }
+            set { selectedpaeropuertovueltav = value; }
+        }
+
 
 
         private bool hayerror;
@@ -451,6 +484,15 @@ namespace AppVuelos.ViewModels
 
         //////// PIKERS////////
 
+
+
+        private List<Aeropuerto> paeropuerto;
+
+        public List<Aeropuerto> PAeropuerto
+        {
+            get { return paeropuerto; }
+            set { paeropuerto = value; }
+        }
 
 
 

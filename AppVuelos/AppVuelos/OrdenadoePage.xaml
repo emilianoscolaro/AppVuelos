@@ -38,6 +38,13 @@
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Aeropuerto" Style="{StaticResource labelstyle}"/>
+                    <Picker HorizontalOptions="FillAndExpand" ItemsSource="{Binding PAeropuerto}" ItemDisplayBinding="{Binding Codigo}" 
+                            SelectedItem="{Binding SelectedPAIda}" Title="-Sale-"/>
+                    <Picker HorizontalOptions="FillAndExpand" ItemsSource="{Binding PAeropuerto}" ItemDisplayBinding="{Binding Codigo}" 
+                            SelectedItem="{Binding SelectedPAIdaV}" Title="-Llega-"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Fecha " Style="{StaticResource labelstyle}"/>
                     <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateSalida}" MinimumDate="{Binding DateSalida}"/>
                 </StackLayout>
@@ -60,6 +67,13 @@
                 <StackLayout>
                     <Label Text="Vuelta" Style="{StaticResource Titulo}" />
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30">
+                    <Label Text="Aeropuerto" Style="{StaticResource labelstyle}"/>
+                    <Picker HorizontalOptions="FillAndExpand" ItemsSource="{Binding PAeropuerto}" ItemDisplayBinding="{Binding Codigo}" 
+                            SelectedItem="{Binding SelectedPAVueltaI}" Title="-Sale-"/>
+                    <Picker HorizontalOptions="FillAndExpand" ItemsSource="{Binding PAeropuerto}" ItemDisplayBinding="{Binding Codigo}" 
+                            SelectedItem="{Binding SelectedPAVuelta}" Title="-Llega-"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Fecha " Style="{StaticResource labelstyle}"/>
