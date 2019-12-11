@@ -238,13 +238,20 @@ namespace AppVuelos.ViewModels
         public Ciudad SelectCiudad
         {
             get { return selectciudad; }
-            set { selectciudad = value;
-                if (value != null)
+            set { if(value != null)
                 {
-                    VisHotel = true;
+                    selectciudad = value;
+                    if (value != null)
+                    {
+                        VisHotel = true;
+                    }
+                    HotelesList = datastorge.Hoteldidentify(selectciudad.Name, HotelesList);
+                    OnPropertyChanged();
                 }
-                HotelesList = datastorge.Hoteldidentify(selectciudad.Name, HotelesList);
-                OnPropertyChanged();
+                    
+
+
+
             }
         }
 
