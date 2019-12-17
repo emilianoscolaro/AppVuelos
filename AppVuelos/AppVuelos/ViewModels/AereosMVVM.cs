@@ -20,6 +20,8 @@ namespace AppVuelos.ViewModels
         DateTime _llegada;
         Model.PickerList _cia;
         Model.PickerList _escala;
+        Model.PickerList _ciav;
+        Model.PickerList _escalav;
         Model.PickerList _shs;
         Model.PickerList _shsv;
         Model.PickerList _lhs;
@@ -37,7 +39,7 @@ namespace AppVuelos.ViewModels
         public AereosMVVM(Model.PickerList Pick, string Precio, bool CheckTransfer, bool CkBolso, bool CkTrasladoCasa, bool CkValija,
            DateTime Salida, DateTime Llegada, Model.PickerList Cia, Model.PickerList Escala, Model.PickerList Shs, Model.PickerList ShsV, Model.PickerList Lhs
             , Model.PickerList LhsV, Model.PickerList Smin, Model.PickerList SminV, Model.PickerList Lmin, Model.PickerList LminV, Model.Aeropuerto Ii,
-            Model.Aeropuerto Iv, Model.Aeropuerto Vi, Model.Aeropuerto Vv)
+            Model.Aeropuerto Iv, Model.Aeropuerto Vi, Model.Aeropuerto Vv, Model.PickerList CiaV, Model.PickerList EscalaV)
         {
 
             _pick = Pick;
@@ -50,6 +52,8 @@ namespace AppVuelos.ViewModels
             _llegada = Llegada;
             _cia = Cia;
             _escala = Escala;
+            _ciav = CiaV;
+            _escalav = EscalaV;
             _shs = Shs;
             _shsv = ShsV;
             _lhs = Lhs;
@@ -190,6 +194,26 @@ namespace AppVuelos.ViewModels
             get { return _cia.Compania; }
             set { _cia.Compania = value; }
         }
+
+
+        private string escalasv;
+
+        public string EscalasV
+        {
+            get { return _escalav.Escalas; }
+            set { _escalav.Escalas = value; }
+        }
+
+
+
+        private string companiav;
+
+        public string CiaV
+        {
+            get { return _ciav.Compania; }
+            set { _ciav.Compania = value; }
+        }
+
 
 
 

@@ -44,12 +44,16 @@
                     <Label FontSize="10" Text="{Binding Lhs ,StringFormat='  Llega {0:N}'}"/>
                     <Label FontSize="10" Text="{Binding LMin ,StringFormat=':{0:N}'}"/>
                 </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding CiaV, StringFormat='Aéreos de {0:N}'}"/>
+                    <Label Text="{Binding EscalasV}"/>
+                </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="0">
                     <Label FontSize="10" Text="{Binding Llegada,StringFormat='Fecha {0:dd-MM}'}"/>
                     <Label FontSize="10" Text="{Binding Vi,StringFormat=' Aerop.{0:N}'}"/>
                     <Label FontSize="10" Text="{Binding ShsV,StringFormat='  Sale :{0:N}'}"/>
                     <Label FontSize="10" Text="{Binding SminV ,StringFormat=':{0:N}'}"/>
-                    <Label FontSize="10" Text="{Binding Vi,StringFormat=' Aerop.{0:N}'}"/>
+                    <Label FontSize="10" Text="{Binding Vv,StringFormat=' Aerop.{0:N}'}"/>
                     <Label FontSize="10" Text="{Binding LhsV ,StringFormat='  Llega {0:N}'}"/>
                     <Label FontSize="10" Text="{Binding LMinV ,StringFormat=':{0:N}'}"/>
                 </StackLayout>

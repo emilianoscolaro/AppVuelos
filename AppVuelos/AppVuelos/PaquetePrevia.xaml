@@ -71,7 +71,7 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Fecha " Style="{StaticResource labelstyle}"/>
-                    <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateSalida}" MinimumDate="{Binding DateSalida}"/>
+                    <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateSalida}" MinimumDate="{Binding MinDateIda}"/>
                 </StackLayout>
 
                 <StackLayout Orientation="Horizontal" Spacing="30">
@@ -95,7 +95,7 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Fecha " Style="{StaticResource labelstyle}"/>
-                    <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateLlegada}" MinimumDate="{Binding DateLlegada}"/>
+                    <DatePicker HorizontalOptions="FillAndExpand" Date="{Binding DateLlegada}" MinimumDate="{Binding MinDateV}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Hora salida" Style="{StaticResource labelstyle}"/>

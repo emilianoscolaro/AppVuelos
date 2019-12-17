@@ -27,15 +27,15 @@
                     <Label Text="Aéreos " Style="{StaticResource Titulo}" TextColor="#3f77d1"/>
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
+                <StackLayout>
+                    <Label Text="Ida" Style="{StaticResource Titulo}" />
+                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30" >
                     <Picker Title="--Cnia--" HorizontalOptions="FillAndExpand" ItemsSource="{Binding PCompania}"
                             ItemDisplayBinding="{Binding Compania}"  SelectedItem="{Binding SelectedPCia}"/>
                     <Picker Title="--escalas--" HorizontalOptions="FillAndExpand" ItemsSource="{Binding PEscala}"
                             ItemDisplayBinding="{Binding Escalas}" SelectedItem="{Binding SelectedEscala}"/>
-                </StackLayout>
-                <StackLayout>
-                    <Label Text="Ida" Style="{StaticResource Titulo}" />
-                    <BoxView BackgroundColor="Gray" HeightRequest="1"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Aeropuerto" Style="{StaticResource labelstyle}"/>
@@ -67,6 +67,12 @@
                 <StackLayout>
                     <Label Text="Vuelta" Style="{StaticResource Titulo}" />
                     <BoxView BackgroundColor="Gray" HeightRequest="1"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Spacing="30" >
+                    <Picker Title="--Cnia--" HorizontalOptions="FillAndExpand" ItemsSource="{Binding PCompania}"
+                            ItemDisplayBinding="{Binding Compania}"  SelectedItem="{Binding SelectedPCiaV}"/>
+                    <Picker Title="--escalas--" HorizontalOptions="FillAndExpand" ItemsSource="{Binding PEscala}"
+                            ItemDisplayBinding="{Binding Escalas}" SelectedItem="{Binding SelectedEscalaV}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal" Spacing="30">
                     <Label Text="Aeropuerto" Style="{StaticResource labelstyle}"/>

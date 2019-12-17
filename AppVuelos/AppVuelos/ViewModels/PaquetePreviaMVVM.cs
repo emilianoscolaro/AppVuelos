@@ -132,6 +132,23 @@ namespace AppVuelos.ViewModels
             set { selectedpcia = value; }
         }
 
+        private PickerList selectedescalav;
+
+        public PickerList SelectedEscalaV
+        {
+            get { return selectedescalav; }
+            set { selectedescalav = value; }
+        }
+
+
+
+        private PickerList selectedpciav;
+
+        public PickerList SelectedPCiaV
+        {
+            get { return selectedpciav; }
+            set { selectedpciav = value; }
+        }
 
         private List<PickerList> pmin;
 
@@ -369,7 +386,7 @@ namespace AppVuelos.ViewModels
             {
                 await Navigation.PushAsync(new Aereos(SelectedPick, Precio, ChekTransf, CkBolso, CkTrasladoCasa, CkValija
               , DateSalida, DateLlegada, SelectedPCia, SelectedEscala, SelectedSalidaHs, SelectedSalidaHsV, SelectedLlegadaHs, SelectedLlegadaHsV,
-                SelectedSalidaMin, SelectedSalidaMinV, SeletedLlegadaMin, SeletedLlegadaMinV, SelectedPAIda,SelectedPAIdaV,SelectedPAVueltaI,SelectedPAVuelta));
+                SelectedSalidaMin, SelectedSalidaMinV, SeletedLlegadaMin, SeletedLlegadaMinV, SelectedPAIda,SelectedPAIdaV,SelectedPAVueltaI,SelectedPAVuelta, SelectedPCiaV, SelectedEscalaV));
             }
             else
             {
