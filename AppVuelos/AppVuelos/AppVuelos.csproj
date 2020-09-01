@@ -27,16 +27,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Aereos.xaml">
+    <EmbeddedResource Update="Views\Aereos.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="OrdenadoePage.xaml">
+    <EmbeddedResource Update="Views\OrdenadoePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PaquetePage.xaml">
+    <EmbeddedResource Update="Views\PaquetePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="PaquetePrevia.xaml">
+    <EmbeddedResource Update="Views\PaquetePrevia.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
